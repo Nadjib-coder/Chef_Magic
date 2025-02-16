@@ -1,1 +1,1 @@
-# Chef Claude - Recipe website
+# Chef Magic - Recipe website
