@@ -8,19 +8,19 @@ export default function Main() {
     <li key={ingredient}>{ingredient}</li>
   ));
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    const formEl = event.currentTarget;
-    const formData = new FormData(formEl);
+  function submit(formData) {
+    // event.preventDefault(); --> old react version
+    //const formEl = event.currentTarget; --> old react version
+    // const formData = new FormData(formEl); --> old react version
     const newValue = formData.get('ingredient');
     setIngredients((prev) => [...prev, newValue]);
     // inputref.current.value = '';
-    formEl.reset();
+    // formEl.reset(); --> old react version
   }
 
   return (
     <main>
-      <form onSubmit={handleSubmit} className="add-ingredient-form">
+      <form action={submit} className="add-ingredient-form">
         <input
           type="text"
           placeholder="e.g. oregano"
@@ -30,7 +30,20 @@ export default function Main() {
         ></input>
         <button>Add ingredient</button>
       </form>
-      <ul>{ingredientListItem}</ul>
+
+      <section>
+        <h2 className="ingredients-title">Ingredients on hand:</h2>
+        <ul className="ingredients-list" aria-live="polite">
+          {ingredientListItem}
+        </ul>
+        <div className="get-recipe-container">
+          <div>
+            <h3>Ready for a recipe?</h3>
+            <p>Generate a recipe from your list of ingredients.</p>
+          </div>
+          <button>Get a recipe</button>
+        </div>
+      </section>
     </main>
   );
 }
