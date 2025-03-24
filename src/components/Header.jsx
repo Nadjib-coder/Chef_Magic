@@ -1,10 +1,10 @@
-import chefMagicLogo from '/icon.png';
+import chefNadjibLogo from '/icon.png';
 
 export default function Header() {
   return (
     <header>
-      <img src={chefMagicLogo} alt="Chef Magic" />
-      <h1>Chef Magic</h1>
+      <img src={chefNadjibLogo} alt="Chef Magic" />
+      <h1>Chef Nadjib</h1>
     </header>
   );
 }

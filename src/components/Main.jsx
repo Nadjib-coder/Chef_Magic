@@ -1,12 +1,12 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import IngredientsList from './IngredientsList';
+import AiRecipe from './AiRecipe';
+import { getRecipeFromMistral } from '../services/ai';
 
 export default function Main() {
   const [ingredients, setIngredients] = useState([]);
   // const inputref = useRef(null);
-
-  const ingredientListItem = ingredients.map((ingredient) => (
-    <li key={ingredient}>{ingredient}</li>
-  ));
+  const [recipe, setRecipe] = useState('');
 
   function submit(formData) {
     // event.preventDefault(); --> old react version
@@ -18,36 +18,31 @@ export default function Main() {
     // formEl.reset(); --> old react version
   }
 
+  async function getRecipe() {
+    const newRecipe = await getRecipeFromMistral(ingredients);
+    setRecipe(newRecipe);
+  }
+
   return (
     <main>
       <form action={submit} className="add-ingredient-form">
         <input
           type="text"
-          placeholder="e.g. oregano"
+          placeholder="e.g. pasta, tomato..."
           aria-label="Add Ingredient"
           name="ingredient"
+          minLength={3}
+          maxLength={50}
           // ref={inputref}
+          required
         ></input>
         <button>Add ingredient</button>
       </form>
 
       {ingredients.length > 0 && (
-        <section>
-          <h2 className="ingredients-title">Ingredients on hand:</h2>
-          <ul className="ingredients-list" aria-live="polite">
-            {ingredientListItem}
-          </ul>
-          {ingredients.length >= 4 && (
-            <div className="get-recipe-container">
-              <div>
-                <h3>Ready for a recipe?</h3>
-                <p>Generate a recipe from your list of ingredients.</p>
-              </div>
-              <button>Get a recipe</button>
-            </div>
-          )}
-        </section>
+        <IngredientsList ingredients={ingredients} getRecipe={getRecipe} />
       )}
+      {recipe && <AiRecipe recipe={recipe} />}
     </main>
   );
 }
