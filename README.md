@@ -35,40 +35,6 @@ The app is hosted on Netlify for easy access. You can view it here:
 - Re-enable the AI-powered recipe generation feature.
 - Explore additional features like user authentication and recipe saving.
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js installed on your system.
-- Basic understanding of frontend development.
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/recipe-web-app.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd recipe-web-app
-   ```
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-4. Start the development server:
-   ```bash
-   npm start
-   ```
-
-### Deployment on Netlify
-
-1. Build the project:
-   ```bash
-   npm run build
-   ```
-2. Drag and drop the `build` folder into the Netlify deployment area.
-3. Copy the generated link and replace it in the README under "Deployment."
 
 ## Feedback
 
