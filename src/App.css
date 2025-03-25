@@ -161,7 +161,7 @@ ul.ingredients-list > li {
 }
 /* end get a recipe section */
 
-/* start Ai recipe section */
+/* start Ai recipe section 
 .recipe-section {
   margin-top: 1rem;
   padding: 0 18px;
@@ -173,7 +173,87 @@ ul.ingredients-list > li {
   padding: 30px 0;
   color: #000;
 }
-/* end Ai recipe section */
+ end Ai recipe section */
+
+/* start mockapi recipe section */
+.recipe-app {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.recipe-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.recipe-card {
+  background-color: #fafaf8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-card h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.recipe-card p {
+  font-size: 1rem;
+  color: #6B7280;
+  margin: 5px 0;
+}
+
+.recipe-card strong {
+  font-weight: bold;
+  color: #333;
+}
+
+.recipe-card ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.recipe-card ul li {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.recipe-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.recipe-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.recipe-card .tags li {
+  background-color: #e0f7fa;
+  color: #00796b;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+/* end mockapi recipe section */
+
 
 /* start footer section */
 footer {

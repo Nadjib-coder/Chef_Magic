@@ -1,10 +1,17 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import IngredientsList from './IngredientsList';
-import AiRecipe from './AiRecipe';
-import { getRecipeFromMistral } from '../services/ai';
+import ApiRecipe from './ApiRecipe';
+// import AiRecipe from './AiRecipe';
+// import { getRecipeFromMistral } from '../services/ai';
 
 export default function Main() {
-  const [ingredients, setIngredients] = useState([]);
+  const [ingredients, setIngredients] = useState([
+    'toamto',
+    'chicken',
+    'all the main spices',
+    'potato',
+    'Spaghetti',
+  ]);
   // const inputref = useRef(null);
   const [recipe, setRecipe] = useState('');
 
@@ -18,9 +25,10 @@ export default function Main() {
     // formEl.reset(); --> old react version
   }
 
-  async function getRecipe() {
-    const newRecipe = await getRecipeFromMistral(ingredients);
-    setRecipe(newRecipe);
+  const [clicked, setClicked] = useState(false);
+  function getRecipe() {
+    // const newRecipe = await getRecipeFromMistral(ingredients);
+    setClicked(true);
   }
 
   return (
@@ -42,7 +50,8 @@ export default function Main() {
       {ingredients.length > 0 && (
         <IngredientsList ingredients={ingredients} getRecipe={getRecipe} />
       )}
-      {recipe && <AiRecipe recipe={recipe} />}
+      {/* {recipe && <AiRecipe recipe={recipe} />} */}
+      {clicked && <ApiRecipe getRecipe={getRecipe} ing={ingredients} />}
     </main>
   );
 }
