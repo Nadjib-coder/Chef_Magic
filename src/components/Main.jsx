@@ -5,13 +5,7 @@ import ApiRecipe from './ApiRecipe';
 // import { getRecipeFromMistral } from '../services/ai';
 
 export default function Main() {
-  const [ingredients, setIngredients] = useState([
-    'toamto',
-    'chicken',
-    'all the main spices',
-    'potato',
-    'Spaghetti',
-  ]);
+  const [ingredients, setIngredients] = useState([]);
   // const inputref = useRef(null);
   const [recipe, setRecipe] = useState('');
 

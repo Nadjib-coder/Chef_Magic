@@ -25,7 +25,7 @@ This app demonstrates my **frontend development skills** and serves as a foundat
 
 The app is hosted on Netlify for easy access. You can view it here:
 
-[Recipe Web App Live Demo](#)
+[Recipe Web App Live Demo](https://chefnadjib.netlify.app/)
 
 > Note: Replace the `#` above with the actual Netlify link after deploying.
 
@@ -34,7 +34,6 @@ The app is hosted on Netlify for easy access. You can view it here:
 - Implement a secure backend for private key management.
 - Re-enable the AI-powered recipe generation feature.
 - Explore additional features like user authentication and recipe saving.
-
 
 ## Feedback
 
