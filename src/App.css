@@ -196,19 +196,30 @@ ul.ingredients-list > li {
   margin-top: 30px;
 }
 
+.reset-button {
+  background-color: #f65138;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto 0;
+  
+}
+
 @media only screen and (max-width: 700px) {
   .recipe-app {
-    text-align: center;
     padding: 0;
     margin-top: 30px;
     font-size: 14px;
   }
+  .no-recipes {
+    text-align: center;
+  }
 }
-.recipe-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
+
 
 .recipe-card {
   background-color: #fafaf8;

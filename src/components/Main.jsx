@@ -16,13 +16,18 @@ export default function Main() {
     const newValue = formData.get('ingredient');
     setIngredients((prev) => [...prev, newValue]);
     // inputref.current.value = '';
-    // formEl.reset(); --> old react version
+    // formData.reset(); --> old react version
   }
 
   const [clicked, setClicked] = useState(false);
   function getRecipe() {
     // const newRecipe = await getRecipeFromMistral(ingredients);
     setClicked(true);
+  }
+
+  function resetSearch() {
+    setIngredients([]); // Clear the ingredients list
+    setClicked(false); // Hide the ApiRecipe component
   }
 
   return (
@@ -45,7 +50,7 @@ export default function Main() {
         <IngredientsList ingredients={ingredients} getRecipe={getRecipe} />
       )}
       {/* {recipe && <AiRecipe recipe={recipe} />} */}
-      {clicked && <ApiRecipe getRecipe={getRecipe} ing={ingredients} />}
+      {clicked && <ApiRecipe resetSearch={resetSearch} ing={ingredients} />}
     </main>
   );
 }

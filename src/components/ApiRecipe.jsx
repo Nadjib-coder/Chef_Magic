@@ -8,7 +8,7 @@ export default function RecipeApp(props) {
   // Fetch recipes from the API when the component mounts
   useEffect(() => {
     axios
-      .get('https://run.mocky.io/v3/1b3b18b6-1013-4d76-898e-df93a3beab89')
+      .get('https://run.mocky.io/v3/a441cb2b-8ea6-4367-9b3a-4a2a7297dbfc')
       .then((response) => {
         setRecipes(response.data);
         setFilteredRecipes(response.data);
@@ -68,12 +68,15 @@ export default function RecipeApp(props) {
             </div>
           ))
         ) : (
-          <p>
+          <p className="no-recipes">
             No recipes found. Try different ingredients like Spaghetti or
             Broccoli.
           </p>
         )}
       </div>
+      <button onClick={props.resetSearch} className="reset-button">
+        Reset Search
+      </button>
     </div>
   );
 }
