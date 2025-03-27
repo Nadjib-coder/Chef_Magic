@@ -20,6 +20,7 @@ export default function Main() {
   }
 
   const [clicked, setClicked] = useState(false);
+
   function getRecipe() {
     // const newRecipe = await getRecipeFromMistral(ingredients);
     setClicked(true);

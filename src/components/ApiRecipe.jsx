@@ -25,7 +25,7 @@ export default function RecipeApp(props) {
       recipe.ingredients.some((ingredient) => props.ing.includes(ingredient)),
     );
     setFilteredRecipes(filtered);
-  }, [recipes, props.ingredients]);
+  }, [recipes, props.ing]);
 
   return (
     <div className="recipe-app">
