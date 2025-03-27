@@ -27,7 +27,6 @@ The app is hosted on Netlify for easy access. You can view it here:
 
 [Recipe Web App Live Demo](https://chefnadjib.netlify.app/)
 
-> Note: Replace the `#` above with the actual Netlify link after deploying.
 
 ## Future Plans
 
