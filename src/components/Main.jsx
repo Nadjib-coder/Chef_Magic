@@ -36,7 +36,7 @@ export default function Main() {
       <form action={submit} className="add-ingredient-form">
         <input
           type="text"
-          placeholder="e.g. pasta, tomato..."
+          placeholder="e.g. Spaghetti, Broccoli..."
           aria-label="Add Ingredient"
           name="ingredient"
           minLength={3}
