@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import IngredientsList from './IngredientsList';
 import ApiRecipe from './ApiRecipe';
+import capitalize from 'lodash/capitalize';
 // import AiRecipe from './AiRecipe';
 // import { getRecipeFromMistral } from '../services/ai';
 
@@ -14,7 +15,8 @@ export default function Main() {
     //const formEl = event.currentTarget; --> old react version
     // const formData = new FormData(formEl); --> old react version
     const newValue = formData.get('ingredient');
-    setIngredients((prev) => [...prev, newValue]);
+    const capitalized = capitalize(newValue);
+    setIngredients((prev) => [...prev, capitalized]);
     // inputref.current.value = '';
     // formData.reset(); --> old react version
   }

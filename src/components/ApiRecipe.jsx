@@ -8,7 +8,7 @@ export default function RecipeApp(props) {
   // Fetch recipes from the API when the component mounts
   useEffect(() => {
     axios
-      .get('https://run.mocky.io/v3/76688853-f6fa-4096-8555-cca67203b82a')
+      .get('https://run.mocky.io/v3/b836d1d7-0051-43bb-a2dd-56e129d8da44')
       .then((response) => {
         setRecipes(response.data);
         setFilteredRecipes(response.data);
