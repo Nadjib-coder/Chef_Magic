@@ -5,6 +5,7 @@ export default function IngredientsList(props) {
   return (
     <section>
       <h2 className="ingredients-title">Ingredients on hand:</h2>
+      <span>Add at least four (4) ingredients.</span>
       <ul className="ingredients-list" aria-live="polite">
         {ingredientListItem}
       </ul>
