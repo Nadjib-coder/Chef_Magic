@@ -228,6 +228,7 @@ ul.ingredients-list > li {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 20px;
 }
 
 .recipe-card:hover {
