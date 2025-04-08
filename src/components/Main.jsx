@@ -8,19 +8,19 @@ import capitalize from 'lodash/capitalize';
 export default function Main() {
   const [ingredients, setIngredients] = useState([]);
   // const inputref = useRef(null);
-  const [recipe, setRecipe] = useState('');
+  // const [recipe, setRecipe] = useState('');
   const recipeSection = useRef(null);
-
-  console.log(recipeSection);
+  const [clicked, setClicked] = useState(false);
 
   // add the auto scroll to the recipe section
   useEffect(() => {
-    if (recipe !== '' && recipeSection.current !== null) {
+    if (clicked && recipeSection) {
       recipeSection.current.scrollIntoView({
         behavior: 'smooth',
+        block: 'start',
       });
     }
-  }, [recipe]);
+  }, [clicked]);
 
   function submit(formData) {
     // event.preventDefault(); --> old react version
@@ -32,8 +32,6 @@ export default function Main() {
     // inputref.current.value = '';
     // formData.reset(); --> old react version
   }
-
-  const [clicked, setClicked] = useState(false);
 
   function getRecipe() {
     // const newRecipe = await getRecipeFromMistral(ingredients);
