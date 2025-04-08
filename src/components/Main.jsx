@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import IngredientsList from './IngredientsList';
 import ApiRecipe from './ApiRecipe';
 import capitalize from 'lodash/capitalize';
@@ -9,8 +9,18 @@ export default function Main() {
   const [ingredients, setIngredients] = useState([]);
   // const inputref = useRef(null);
   const [recipe, setRecipe] = useState('');
-
   const recipeSection = useRef(null);
+
+  console.log(recipeSection);
+
+  // add the auto scroll to the recipe section
+  useEffect(() => {
+    if (recipe !== '' && recipeSection.current !== null) {
+      recipeSection.current.scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
+  }, [recipe]);
 
   function submit(formData) {
     // event.preventDefault(); --> old react version
