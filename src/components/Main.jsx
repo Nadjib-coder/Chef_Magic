@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import IngredientsList from './IngredientsList';
 import ApiRecipe from './ApiRecipe';
 import capitalize from 'lodash/capitalize';
@@ -9,6 +9,8 @@ export default function Main() {
   const [ingredients, setIngredients] = useState([]);
   // const inputref = useRef(null);
   const [recipe, setRecipe] = useState('');
+
+  const recipeSection = useRef(null);
 
   function submit(formData) {
     // event.preventDefault(); --> old react version
@@ -50,7 +52,11 @@ export default function Main() {
       </form>
 
       {ingredients.length > 0 && (
-        <IngredientsList ingredients={ingredients} getRecipe={getRecipe} />
+        <IngredientsList
+          ingredients={ingredients}
+          getRecipe={getRecipe}
+          ref={recipeSection}
+        />
       )}
       {/* {recipe && <AiRecipe recipe={recipe} />} */}
       {clicked && <ApiRecipe resetSearch={resetSearch} ing={ingredients} />}
