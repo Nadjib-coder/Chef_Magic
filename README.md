@@ -25,7 +25,7 @@ This app demonstrates my **frontend development skills** and serves as a foundat
 
 The app is hosted on Netlify for easy access. You can view it here:
 
-[Meme Crafter Web App Live Demo](https://chefnadjib.netlify.app/)
+[Recipe Web App Live Demo](https://chefnadjib.netlify.app/)
 
 
 ## Future Plans
